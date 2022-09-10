@@ -11,7 +11,7 @@ import com.nach.core.util.file.FileUtil;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ValueSetUtilsIntegrationTest {
+public class ValueSetUtilGetNamesIntegrationTest {
 
 	private static final String DIR = "/fhir/valueset/hiv-cds/vocabulary/valueset/generated";
 
@@ -19,8 +19,8 @@ public class ValueSetUtilsIntegrationTest {
 	public void shouldGetNames() {
 		log.info("Starting test...");
 		File dir = FileUtil.getFile(DIR);
-		List<ValueSet> valueSets = ValueSetUtils.getValueSets(dir, false);
-		List<String> names = ValueSetUtils.getNames(valueSets);
+		List<ValueSet> valueSets = ValueSetUtil.getValueSets(dir, false);
+		List<String> names = ValueSetUtil.getNames(valueSets);
 		log.info("Got " + names.size() + " names.");
 		for(String name : names) {
 			log.info("\t" + name);
