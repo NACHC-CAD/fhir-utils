@@ -37,7 +37,7 @@ public class FhirFileReader {
 				}
 			} else {
 				if(isRecursive) {
-					
+					getFhirResources(file, cls, isRecursive, rtn);
 				}
 			}
 		}
